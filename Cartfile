@@ -1,0 +1,5 @@
+#github "3lvis/Networking"
+github "realm/realm-cocoa"
+github "Alamofire/Alamofire" ~> 3.4
+
+
