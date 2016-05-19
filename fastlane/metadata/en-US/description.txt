@@ -1,0 +1,9 @@
+Watch the most common GITHUB projects . You can list them by language or all repos of all languages. And see their description right in the app. As the results are stored in a (REALM) database, you can even use the app when offline.
+
+You find the source on GitHub at
+
+https://github.com/Tintenklecks/GitWatch
+
+This is just a first "One day work" version as I´m now on a trip on the CANAL DU MIDI ;-) and I wanted something to have without internet connection ;-)
+
+njoy
