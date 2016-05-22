@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2834DD0C1CEBD36000F7AAAA /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2834DD0B1CEBD36000F7AAAA /* Media.xcassets */; };
 		286F83401CE9D7DB00606E01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286F833F1CE9D7DB00606E01 /* AppDelegate.swift */; };
 		286F83451CE9D7DB00606E01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 286F83431CE9D7DB00606E01 /* Main.storyboard */; };
 		286F83471CE9D7DB00606E01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 286F83461CE9D7DB00606E01 /* Assets.xcassets */; };
@@ -25,6 +24,7 @@
 		28F70AFB1CEB34FE004741B9 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F70AFA1CEB34FE004741B9 /* Settings.swift */; };
 		28F70AFD1CEB38A1004741B9 /* LanguageSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F70AFC1CEB38A1004741B9 /* LanguageSelection.swift */; };
 		28F70B011CEB3D4D004741B9 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F70B001CEB3D4D004741B9 /* WebViewController.swift */; };
+		28FD49CC1CF089B300830596 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28FD49CB1CF089B300830596 /* Media.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,7 +44,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2834DD0B1CEBD36000F7AAAA /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		2849B7971CEEF5C7000F855C /* GitWatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitWatchUITests.swift; sourceTree = "<group>"; };
+		2849B7991CEEF5C7000F855C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2849B79F1CEEF6E6000F855C /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
+		2849B7A81CEEF810000F855C /* GitWatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitWatchTests.swift; sourceTree = "<group>"; };
+		2849B7AA1CEEF810000F855C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		286F833C1CE9D7DB00606E01 /* GitWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		286F833F1CE9D7DB00606E01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		286F83441CE9D7DB00606E01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -61,6 +65,7 @@
 		28F70AFA1CEB34FE004741B9 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		28F70AFC1CEB38A1004741B9 /* LanguageSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageSelection.swift; sourceTree = "<group>"; };
 		28F70B001CEB3D4D004741B9 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		28FD49CB1CF089B300830596 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,10 +82,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2849B7961CEEF5C7000F855C /* GitWatchUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2849B79F1CEEF6E6000F855C /* SnapshotHelper.swift */,
+				2849B7971CEEF5C7000F855C /* GitWatchUITests.swift */,
+				2849B7991CEEF5C7000F855C /* Info.plist */,
+			);
+			path = GitWatchUITests;
+			sourceTree = "<group>";
+		};
+		2849B7A71CEEF810000F855C /* GitWatchTests */ = {
+			isa = PBXGroup;
+			children = (
+				2849B7A81CEEF810000F855C /* GitWatchTests.swift */,
+				2849B7AA1CEEF810000F855C /* Info.plist */,
+			);
+			path = GitWatchTests;
+			sourceTree = "<group>";
+		};
 		286F83331CE9D7DB00606E01 = {
 			isa = PBXGroup;
 			children = (
 				286F833E1CE9D7DB00606E01 /* GitWatch */,
+				2849B7961CEEF5C7000F855C /* GitWatchUITests */,
+				2849B7A71CEEF810000F855C /* GitWatchTests */,
 				286F833D1CE9D7DB00606E01 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -107,7 +133,7 @@
 				286F83461CE9D7DB00606E01 /* Assets.xcassets */,
 				28A4878C1CEBB92D0058EA6C /* Icons.xcassets */,
 				286F83481CE9D7DB00606E01 /* LaunchScreen.storyboard */,
-				2834DD0B1CEBD36000F7AAAA /* Media.xcassets */,
+				28FD49CB1CF089B300830596 /* Media.xcassets */,
 				286F834B1CE9D7DB00606E01 /* Info.plist */,
 				28F70AF71CEB2D17004741B9 /* Alamofire.framework */,
 				286F83601CE9E84D00606E01 /* Realm.framework */,
@@ -178,7 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2834DD0C1CEBD36000F7AAAA /* Media.xcassets in Resources */,
+				28FD49CC1CF089B300830596 /* Media.xcassets in Resources */,
 				286F834A1CE9D7DB00606E01 /* LaunchScreen.storyboard in Resources */,
 				286F83471CE9D7DB00606E01 /* Assets.xcassets in Resources */,
 				28A4878D1CEBB92D0058EA6C /* Icons.xcassets in Resources */,

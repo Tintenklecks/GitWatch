@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import RealmSwift
 
 class WebViewController: UIViewController, UIWebViewDelegate {
+    @IBOutlet weak var favoriteButton: UIButton!
+    var gitRepo:GITRealm! = nil
 	var loaded: Bool = false
 	var _repositoryURL = ""
 	var repositoryURL: String {
@@ -44,6 +47,7 @@ class WebViewController: UIViewController, UIWebViewDelegate {
 			repositoryURL = _repositoryURL // load it
 		}
 		webView.scrollView.contentOffset = CGPoint(x: 0, y: 0)
+        
 
 	}
 	func webViewDidFinishLoad(webView: UIWebView) {
@@ -54,4 +58,29 @@ class WebViewController: UIViewController, UIWebViewDelegate {
 
 	}
 
+    @IBAction func openInSafari(sender: AnyObject) {
+        let url = NSURL(string: repositoryURL)
+        if url != nil {
+            UIApplication.sharedApplication().openURL(url!)
+        }
+    }
+    
+
+    
+    
+    @IBAction func selectAsFavorite(sender: UIButton) {
+        
+        if gitRepo != nil   {
+            
+            
+            try! Realm().write({
+                gitRepo.favorite = !gitRepo.favorite
+                favoriteButton.selected = gitRepo.favorite
+
+                try! Realm().add(gitRepo, update: true)
+            })
+            
+            
+        }
+    }
 }

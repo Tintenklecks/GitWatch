@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Repository Tableview Controller-->
@@ -19,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="69"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zlF-hS-8qO" id="Lf7-6S-S37">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="68.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CoI-8o-VvZ">
@@ -61,20 +62,35 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconWiki" translatesAutoresizingMaskIntoConstraints="NO" id="chh-pt-MOr">
                                             <rect key="frame" x="183" y="3" width="15" height="10"/>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Biw-sd-8gK">
+                                            <rect key="frame" x="327" y="16" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="4SD-uh-k7S"/>
+                                                <constraint firstAttribute="width" constant="40" id="bqe-Ap-DaJ"/>
+                                            </constraints>
+                                            <state key="normal" image="iconStarGray"/>
+                                            <state key="selected" image="iconStarSelected"/>
+                                            <connections>
+                                                <action selector="switchFavoriteState:" destination="zlF-hS-8qO" eventType="touchUpInside" id="v4z-gh-OBU"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="1sD-TH-V37" firstAttribute="top" secondItem="CoI-8o-VvZ" secondAttribute="bottom" constant="5" id="3MT-fx-HvG"/>
                                         <constraint firstItem="svp-b2-SqO" firstAttribute="leading" secondItem="UxF-M2-eMr" secondAttribute="trailing" constant="2" id="5Lf-ti-pzD"/>
                                         <constraint firstItem="1sD-TH-V37" firstAttribute="leading" secondItem="Lf7-6S-S37" secondAttribute="leadingMargin" id="6a3-X5-cjj"/>
-                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="1sD-TH-V37" secondAttribute="trailing" id="Bh2-0F-1hz"/>
-                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="CoI-8o-VvZ" secondAttribute="trailing" id="CEp-6O-F8s"/>
+                                        <constraint firstItem="Biw-sd-8gK" firstAttribute="top" secondItem="Urq-4F-VvX" secondAttribute="bottom" id="B1O-M1-f8m"/>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="1sD-TH-V37" secondAttribute="trailing" constant="40" id="Bh2-0F-1hz"/>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="CoI-8o-VvZ" secondAttribute="trailing" constant="40" id="CEp-6O-F8s"/>
                                         <constraint firstItem="CoI-8o-VvZ" firstAttribute="leading" secondItem="Lf7-6S-S37" secondAttribute="leadingMargin" id="F9K-Au-G0R"/>
+                                        <constraint firstItem="Biw-sd-8gK" firstAttribute="top" secondItem="Lf7-6S-S37" secondAttribute="topMargin" constant="8" id="JQX-eJ-Ksm"/>
                                         <constraint firstItem="UxF-M2-eMr" firstAttribute="top" secondItem="Lf7-6S-S37" secondAttribute="topMargin" constant="-5" id="Key-nb-bby"/>
                                         <constraint firstItem="CMk-Ga-cEX" firstAttribute="top" secondItem="Lf7-6S-S37" secondAttribute="topMargin" constant="-5" id="Mli-Fv-P1y"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="1sD-TH-V37" secondAttribute="bottom" constant="10" id="Ppe-n6-MYt"/>
                                         <constraint firstItem="chh-pt-MOr" firstAttribute="top" secondItem="Lf7-6S-S37" secondAttribute="topMargin" constant="-5" id="R16-Us-m8m"/>
                                         <constraint firstItem="Urq-4F-VvX" firstAttribute="leading" secondItem="auS-aA-bzn" secondAttribute="trailing" constant="13" id="SCY-Oe-Vta"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Urq-4F-VvX" secondAttribute="trailing" id="USg-td-Rrd"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Biw-sd-8gK" secondAttribute="trailing" id="abs-XC-edY"/>
                                         <constraint firstItem="auS-aA-bzn" firstAttribute="top" secondItem="Lf7-6S-S37" secondAttribute="topMargin" constant="-8" id="kb1-D4-OjF"/>
                                         <constraint firstItem="auS-aA-bzn" firstAttribute="leading" secondItem="CMk-Ga-cEX" secondAttribute="trailing" constant="2" id="mep-p7-eLV"/>
                                         <constraint firstItem="svp-b2-SqO" firstAttribute="top" secondItem="Lf7-6S-S37" secondAttribute="topMargin" constant="-8" id="ob6-2d-2cS"/>
@@ -84,9 +100,16 @@
                                         <constraint firstItem="CoI-8o-VvZ" firstAttribute="top" secondItem="Lf7-6S-S37" secondAttribute="topMargin" constant="8" id="uKO-3d-Vjq"/>
                                         <constraint firstItem="CMk-Ga-cEX" firstAttribute="leading" secondItem="svp-b2-SqO" secondAttribute="trailing" constant="18" id="xDB-DS-jcE"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="B1O-M1-f8m"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="favoriteButton" destination="Biw-sd-8gK" id="Dzp-2V-ZCA"/>
                                     <outlet property="languageLabel" destination="Urq-4F-VvX" id="Hdo-kB-5G8"/>
+                                    <outlet property="languageLabelConstraint" destination="SCY-Oe-Vta" id="nvc-3q-mqD"/>
                                     <outlet property="repoDescription" destination="1sD-TH-V37" id="bIO-Sd-vSb"/>
                                     <outlet property="repoName" destination="CoI-8o-VvZ" id="ky1-FY-O9u"/>
                                     <outlet property="starLabel" destination="svp-b2-SqO" id="V1V-nT-7lt"/>
@@ -99,7 +122,7 @@
                                 <rect key="frame" x="0.0" y="161" width="375" height="59"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uYI-pg-Xud" id="A4n-QY-MlN">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="58.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="load more ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hsQ-ew-x91">
@@ -186,7 +209,7 @@
             </objects>
             <point key="canvasLocation" x="217.5" y="625.5"/>
         </scene>
-        <!--Web View Controller-->
+        <!--Github Readme-->
         <scene sceneID="d2W-CU-gwX">
             <objects>
                 <viewController id="iU9-hi-fCo" customClass="WebViewController" customModule="GitWatch" customModuleProvider="target" sceneMemberID="viewController">
@@ -211,7 +234,42 @@
                             <constraint firstItem="ivu-FK-s62" firstAttribute="top" secondItem="hgD-O6-nk9" secondAttribute="bottom" id="vdS-lD-MK3"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Github Readme" id="3NN-ft-qAd">
+                        <rightBarButtonItems>
+                            <barButtonItem image="globe" id="QR2-4i-2Dp">
+                                <connections>
+                                    <action selector="openInSafari:" destination="iU9-hi-fCo" id="LYa-gQ-KGY"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="l1j-Lh-svJ">
+                                <view key="customView" contentMode="scaleToFill" id="xG1-UT-ek9">
+                                    <rect key="frame" x="268" y="5" width="50" height="33"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBS-4A-kGd">
+                                            <rect key="frame" x="22" y="5" width="24" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="33" id="XgP-LF-2oV"/>
+                                                <constraint firstAttribute="height" constant="33" id="vXz-LX-Hhz"/>
+                                            </constraints>
+                                            <state key="normal" image="iconStarGray"/>
+                                            <state key="selected" image="iconStarSelected"/>
+                                            <connections>
+                                                <action selector="selectAsFavorite:" destination="iU9-hi-fCo" eventType="touchUpInside" id="Zrg-jD-bag"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="RBS-4A-kGd" secondAttribute="trailing" id="8IC-QI-sf0"/>
+                                        <constraint firstItem="RBS-4A-kGd" firstAttribute="centerY" secondItem="xG1-UT-ek9" secondAttribute="centerY" id="xVe-Ul-edW"/>
+                                    </constraints>
+                                </view>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
                     <connections>
+                        <outlet property="favoriteButton" destination="RBS-4A-kGd" id="BgE-5J-EGI"/>
                         <outlet property="webView" destination="ivu-FK-s62" id="kdO-b3-mRG"/>
                     </connections>
                 </viewController>
@@ -232,7 +290,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fuI-wA-4U9" id="D0p-Wb-Fb6">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -289,8 +347,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="globe" width="22" height="22"/>
         <image name="iconEye" width="19" height="10"/>
         <image name="iconStar" width="11" height="10"/>
+        <image name="iconStarGray" width="24" height="22"/>
+        <image name="iconStarSelected" width="24" height="22"/>
         <image name="iconWiki" width="15" height="10"/>
     </resources>
 </document>

@@ -11,6 +11,9 @@ import RealmSwift
 
 class RepositoryCell: UITableViewCell {
 
+    var repo : GITRealm! = nil
+    @IBOutlet weak var favoriteButton: UIButton!
+    @IBOutlet weak var languageLabelConstraint: NSLayoutConstraint!
 	@IBOutlet weak var repoName: UILabel!
 	@IBOutlet weak var repoDescription: UILabel!
 	@IBOutlet weak var wikiImage: UIImageView!
@@ -29,14 +32,38 @@ class RepositoryCell: UITableViewCell {
 	}
 
 	func updateCell(gitRepo: GITRealm, indexPath: NSIndexPath) {
+        self.repo = gitRepo
+        favoriteButton.selected = gitRepo.favorite
+        if Settings.sharedInstance.currentLanguage == "" {
+            languageLabel.hidden = false
+            languageLabelConstraint.constant = 13
+            languageLabel.text = gitRepo.repoLanguage
+        } else {
+            languageLabel.hidden = true
+            languageLabel.text = ""
+            languageLabelConstraint.constant = 0
+        }
+        
 		repoName.text = gitRepo.repoName
 		repoDescription.text = gitRepo.repoDescription
 
 		wikiImage.image = UIImage(named: gitRepo.hasWiki ? "iconWiki" : "iconWikiGray")
 		starLabel.text = String(gitRepo.stargazers_count)
 		watchLabel.text = String(gitRepo.watchers)
-		languageLabel.text = gitRepo.repoLanguage
 
 	}
 
+    @IBAction func switchFavoriteState(sender: AnyObject) {
+        
+        if repo != nil {
+            try! Realm().write({
+                repo.favorite = !repo.favorite
+                try! Realm().add(repo, update: true)
+                
+            })
+            favoriteButton.selected = repo.favorite
+            
+            
+        }
+    }
 }

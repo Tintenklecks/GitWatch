@@ -260,9 +260,11 @@ class RepositoryTableviewController: UITableViewController {
 		print(segue.identifier)
 		if segue.identifier == "detail" {
 			let webViewController = segue.destinationViewController as! WebViewController
+            
 			let index = tableView.indexPathForSelectedRow?.row
 			let repositoryURL = self.dbResults[index!].repoURL
 
+            webViewController.gitRepo = self.dbResults[index!]
 			webViewController.repositoryURL = repositoryURL
 
 		} else if segue.identifier == "languageSettings" {
