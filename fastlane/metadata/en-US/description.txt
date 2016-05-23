@@ -4,6 +4,6 @@ You find the source on GitHub at
 
 https://github.com/Tintenklecks/GitWatch
 
-This is just a first "One day work" version as I´m now on a trip on the CANAL DU MIDI ;-) and I wanted something to have without internet connection ;-)
+This is just a first "One day work" version as I´m now on a trip on the CANAL DU MIDI (France) ;-) and I wanted to have something without the need of an internet connection to look through interesting Github repos ;-)
 
 njoy
